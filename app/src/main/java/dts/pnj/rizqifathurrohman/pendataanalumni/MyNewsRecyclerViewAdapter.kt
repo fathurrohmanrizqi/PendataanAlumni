@@ -4,14 +4,14 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import dts.pnj.rizqifathurrohman.databinding.FragmentBeritaBinding
+import dts.pnj.rizqifathurrohman.pendataanalumni.databinding.FragmentNewsBinding
 
-class NewsRecycleViewAdapter(
+class MyNewsRecyclerViewAdapter(
     private val values: List<NewsItem>
-) : RecyclerView.Adapter<NewsRecycleViewAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<MyNewsRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = FragmentBeritaBinding.inflate(
+        val binding = FragmentNewsBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -26,9 +26,9 @@ class NewsRecycleViewAdapter(
 
         // Load the image from drawable resource
         val imageResource = when (item.pathImage) {
-            "drawable/tech_update" -> R.drawable.w15
-            "drawable/sports_highlights" -> R.drawable.ferrari
-            "drawable/world_news" -> R.drawable.redbull
+            "drawable/w15" -> R.drawable.w15
+            "drawable/ferrari" -> R.drawable.ferrari
+            "drawable/redbull" -> R.drawable.redbull
             else -> R.drawable.ic_berita // Placeholder or default image
         }
         holder.image.setImageResource(imageResource)
@@ -47,7 +47,7 @@ class NewsRecycleViewAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: FragmentBeritaBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(binding: FragmentNewsBinding) : RecyclerView.ViewHolder(binding.root) {
         val title = binding.title
         val content = binding.content
         val image = binding.itemImage

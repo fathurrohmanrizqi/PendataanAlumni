@@ -66,17 +66,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        // Logging saat tabel dibuat
+        Log.d("DatabaseHelper", "Creating tables...");
+
         // Execute the SQL statement to create the tables
         db.execSQL(TABLE_CREATE_USER);
         db.execSQL(TABLE_CREATE_NEWS);
+
+        // Logging setelah tabel dibuat
+        Log.d("DatabaseHelper", "Tables created successfully");
+
         insertDummyData(db);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        Log.d("DatabaseHelper", "Upgrading database from version " + oldVersion + " to " + newVersion);
+
         // Drop the old tables and create new ones
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NEWS);
+
+        Log.d("DatabaseHelper", "Old tables dropped, creating new tables...");
         onCreate(db);
     }
 

@@ -30,12 +30,12 @@ class NewsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.berita_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_news_list, container, false)
 
         if (view is RecyclerView) {
             with(view) {
                 layoutManager = LinearLayoutManager(context)
-                adapter = NewsRecycleViewAdapter(getNewsFromDatabase())
+                adapter = MyNewsRecyclerViewAdapter(getNewsFromDatabase())
             }
         }
         return view
