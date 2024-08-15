@@ -29,6 +29,14 @@ class MyNewsRecyclerViewAdapter(
             "drawable/w15" -> R.drawable.w15
             "drawable/ferrari" -> R.drawable.ferrari
             "drawable/redbull" -> R.drawable.redbull
+            "drawable/charlewis" -> R.drawable.charlewis
+            "drawable/rb19" -> R.drawable.rb19
+            "drawable/newey" -> R.drawable.newey
+            "drawable/wolf" -> R.drawable.wolf
+            "drawable/rally" -> R.drawable.rally
+            "drawable/fiarules" -> R.drawable.fiarules
+            "drawable/vegasgp" -> R.drawable.vegasgp
+            "drawable/schumi" -> R.drawable.schumi
             else -> R.drawable.ic_berita // Placeholder or default image
         }
         holder.image.setImageResource(imageResource)

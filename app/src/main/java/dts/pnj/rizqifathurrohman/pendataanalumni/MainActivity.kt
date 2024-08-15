@@ -88,9 +88,9 @@ class MainActivity : AppCompatActivity() {
     private fun writeUserInfoToFile() {
         val fileName = "user_info.txt"
         val fileContent = """
-            Dimas Febriyanto
-            dimas@example.com
-            50422430
+            Rizqi Fathurrohman
+            fathurrohmanrizqi@gmail.com
+            51422475
             2IA21
         """.trimIndent()
 
